@@ -1,0 +1,26 @@
+﻿2022-02-10 16:31:00,601 FATAL [1] Orden.Views.Order.Find - The 'IdentificationNumber' property on 'Participant' could not be set to a 'System.Int32' value. You must set this property to a non-null value of type 'System.String'. 
+System.InvalidOperationException: The 'IdentificationNumber' property on 'Participant' could not be set to a 'System.Int32' value. You must set this property to a non-null value of type 'System.String'. 
+   en System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   en lambda_method(Closure , Shaper )
+   en System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   en lambda_method(Closure , Shaper )
+   en System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   en System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en Orden.ViewModels.Participant_ViewModel.Participants(String Case) en D:\Versiones\OrdenDesembolso_V_1.1.1.1\Orden\ViewModels\Participant_ViewModel.cs:línea 19
+   en Orden.Views.Order.Find() en D:\Versiones\OrdenDesembolso_V_1.1.1.1\Orden\Views\Order.xaml.cs:línea 262
+2022-02-10 16:31:46,493 FATAL [1] Orden.Views.Order.Find - The 'IdentificationNumber' property on 'Participant' could not be set to a 'System.Int32' value. You must set this property to a non-null value of type 'System.String'. 
+System.InvalidOperationException: The 'IdentificationNumber' property on 'Participant' could not be set to a 'System.Int32' value. You must set this property to a non-null value of type 'System.String'. 
+   en System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   en lambda_method(Closure , Shaper )
+   en System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   en lambda_method(Closure , Shaper )
+   en System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   en System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en Orden.ViewModels.Participant_ViewModel.Participants(String Case) en D:\Versiones\OrdenDesembolso_V_1.1.1.1\Orden\ViewModels\Participant_ViewModel.cs:línea 19
+   en Orden.Views.Order.Find() en D:\Versiones\OrdenDesembolso_V_1.1.1.1\Orden\Views\Order.xaml.cs:línea 262

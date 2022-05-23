@@ -1,0 +1,41 @@
+﻿<Window x:Class="Orden.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Icon="/Img/favicon.ico"
+        Title="SplashScreen" 
+        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar ="False" 
+        Width="600" Height="350" ResizeMode = "NoResize"
+        TextElement.FontFamily="Arial Rounded MT Bold">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ProgressBar.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="#f6f6f6" Margin="20" Name="gridSplash">
+        <Image Source="img\LogoCedex_V0.2.PNG"  RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="10,274,0,0" />
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
+            <Label Content="Orden de Desembolso"  Foreground="#4C4C4C" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin = "0,0,0,0"/>
+            <Label x:Name = "NombreAsistente" Content="Procesando"  Foreground="#4C4C4C" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Margin = "0,0,0,0"/>
+            <ProgressBar  IsIndeterminate="True" Foreground="#4C4C4C" HorizontalAlignment="Center" Width="350" Height="10" Background="#f6f6f6" BorderBrush="#f6f6f6" />
+        </StackPanel>
+        <Grid Background="White" Margin="50" Name="gridSelect">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" HorizontalAlignment="Center" Margin="0 80 0 0" VerticalAlignment="Center">SELECCIONE LA ORDEN DE DESEMBOLSO</Label>
+            <ComboBox x:Name="cbOrders" DropDownClosed="CbOrders_DropDownClosed" Width="250" Grid.Row="1"  Margin="0 -80 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBox}" materialDesign:HintAssist.Hint="Ordenes de Desembolso" />
+        </Grid>
+    </Grid>
+</Window>

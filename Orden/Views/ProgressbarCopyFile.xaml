@@ -1,0 +1,29 @@
+﻿<Window x:Class="Orden.Views.ProgressbarCopyFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Orden.Views"
+        mc:Ignorable="d"
+        Title="Mensaje Informativo" 
+        Height="350" 
+        Width="600" 
+        ResizeMode = "NoResize"  
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        PreviewMouseMove="Window_PreviewMouseMove"
+        Closed="Window_Closed">
+    <Grid Margin="0,5,0,33">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30" FontSize="16" TextAlignment="Center" TextWrapping="Wrap"  Text="Descargando archivos necesarios para el funcionamiento de la orden, este proceso depende de la calidad del internet y la respuesta del servidor de Aplicaciones" Grid.Row="0" ></TextBlock>
+        <ProgressBar  Name="Progress" Grid.Row="1" IsIndeterminate="True" Foreground="#4C4C4C" HorizontalAlignment="Center" Width="350" Height="12" Background="#f6f6f6" BorderBrush="#f6f6f6" />
+        <Button  HorizontalAlignment="Center" Name="Cancelar" Grid.Row="2" Width="100" Click="Cancelar_Click" Margin="203,6,203,38">Cancelar</Button>
+    </Grid>
+</Window>
