@@ -7,10 +7,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"   
         mc:Ignorable="d"
         Icon="/Img/favicon.ico"
-        FontFamily="Arial" 
+        FontFamily="Arial Rounded MT Bold" 
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="11"
+        TextElement.FontWeight="Bold"
+        TextElement.FontSize="11.3"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         WindowStartupLocation="CenterScreen"
@@ -219,9 +219,10 @@
                         <ComboBox Name="cbFrech" DropDownClosed="CbFrech_DropDownClosed" Focusable="False"  Text="{Binding HasFrech, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="350" Style="{StaticResource cbStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="2" materialDesign:HintAssist.Hint="POSEE FRECH "/>
                         <ComboBox Name="cbFonvivienda" DropDownClosed="CbFonvivienda_DropDownClosed" Focusable="False" Text="{Binding HasFonvivienda, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="350" Style="{StaticResource cbStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="3" materialDesign:HintAssist.Hint="FONVIVIENDA"/>
                         <ComboBox Name="cbFormat" DropDownClosed="CbFormat_DropDownClosed" Focusable="False" Text="{Binding Format, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="350" Style="{StaticResource cbStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="4" materialDesign:HintAssist.Hint="FORMATO COBERTURA"/>
-                        <TextBox Name="txtSubsidy" IsReadOnly="True" IsEnabled="True" Text="NO" Width="350" Style="{StaticResource txtStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="5" materialDesign:HintAssist.Hint="SUBSIDIO EXTENDIDO"/>
-                        <TextBox Name="txtFrechResult" GotFocus="TxtFrechResult_GotFocus" IsReadOnly="True" Text="{Binding ResultFrech, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="350" Style="{StaticResource txtStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="6" materialDesign:HintAssist.Hint="RESULTADO FRECH (APLICA)"/>
-                        <ComboBox Name="cbPlace" DropDownOpened="CbPlace_DropDownOpened" Focusable="False" DropDownClosed="CbPlace_DropDownClosed" Width="350" Style="{StaticResource cbStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="7" materialDesign:HintAssist.Hint="VIVIENDA SOSTENIBLE" Visibility="Hidden"/>
+                        <ComboBox Name="cbCpEco" Text="{Binding SustainableHousing,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" DropDownClosed="CbCpEco_DropDownClosed" IsReadOnly="True" IsEnabled="True" Width="350" Style="{StaticResource cbStyle}" Margin="30 5 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="5" materialDesign:HintAssist.Hint="VIVIENDA ECOBERTURA"/>
+                        <TextBox Name="txtSubsidy" IsReadOnly="True" IsEnabled="True" Text="NO" Width="350" Style="{StaticResource txtStyle}" Margin="30 10 0 48" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="6" materialDesign:HintAssist.Hint="SUBSIDIO EXTENDIDO"/>
+                        <TextBox Name="txtFrechResult" GotFocus="TxtFrechResult_GotFocus" IsReadOnly="True" Text="{Binding ResultFrech, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="350" Style="{StaticResource txtStyle}" Margin="60,60,30,0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="6" materialDesign:HintAssist.Hint="RESULTADO FRECH (APLICA)"/>
+                        <ComboBox Name="cbPlace" DropDownOpened="CbPlace_DropDownOpened" Focusable="False" DropDownClosed="CbPlace_DropDownClosed" Width="350" Style="{StaticResource cbStyle}" Margin="30 5 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="7" materialDesign:HintAssist.Hint="VIVIENDA SOSTENIBLE" Visibility="Hidden"/>
                         <ComboBox Name="cbFrechType" DropDownClosed="CbFrechType_DropDownClosed" Focusable="False" Width="350" Style="{StaticResource cbStyle}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="7" materialDesign:HintAssist.Hint="TIPO DE FRECH"/>
                         <TextBox Name="txtPoints" IsReadOnly="True" Width="350" Style="{StaticResource txtStyle}" Text="{Binding points, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ToNumber}}" Margin="30 10 0 0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="8" materialDesign:HintAssist.Hint="PUNTOS COBERTURA"/>
                         <TextBox Name="txtMCY" IsReadOnly="True" KeyDown="TxtMCY_KeyDown" Text="{Binding YearSubsidy, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ToNumber}}" Width="350" Style="{StaticResource txtStyle}" Margin="0,10,-30,0" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="9" materialDesign:HintAssist.Hint="Año Asignación MCY"/>

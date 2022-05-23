@@ -22,6 +22,8 @@ namespace Orden.Model
         public int? ReservationNumber { get; set; }
         public string TypeFrech { get; set; }
         public string LivingPlace { get; set; }
+        [Required(ErrorMessage = "Debe de Indicar si es VIVIENDA ECOBERTURA")]
+        public string SustainableHousing { get; set; }
         public int? YearSubsidy { get; set; }
         public decimal? points { get; set; }
     }

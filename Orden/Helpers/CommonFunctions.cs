@@ -561,6 +561,7 @@ namespace Orden.Helpers
                 FillCombobox(order.cbFrech, "Frech", "TIPOS");
                 FillCombobox(order.cbFonvivienda, "GENERICO", "TIPOS");
                 FillCombobox(order.cbFormat, "Generico", "TIPOS");
+                FillCombobox(order.cbCpEco, "Generico", "TIPOS");
                 FillCombobox(order.cbBRP, "BRP", "TIPOS");
                 FillCombobox(order.cbPropertyType, "Propiedad", "TIPOS");
                 FillCombobox(order.cbDeparment, "Departamentos", "TIPOS");

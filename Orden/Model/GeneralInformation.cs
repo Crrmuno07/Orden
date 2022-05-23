@@ -223,8 +223,8 @@ namespace Orden.Model
             {
                 if (value != _RevivedDate && value.ToString() != "")
                 {
-                    _RevivedDate = value;
-                    _ApprovedVto = _RevivedDate.Value.AddMonths(9) < DateTime.Now ? "VENCIDO" : "VIGENTE";
+                    _RevivedDate = value.Value;
+                    _ApprovedVto = RevivedDate.Value.AddMonths(9) < DateTime.Now ? "VENCIDO" : "VIGENTE";
                     RaisePropertyChanged("RevivedDate");
                     RaisePropertyChanged("ApprovedVto");
                 }

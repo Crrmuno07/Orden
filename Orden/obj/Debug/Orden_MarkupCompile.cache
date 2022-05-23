@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Versiones\OrdenDesembolso_V_1.1.1.1\Orden\obj\Debug\
+D:\Versiones\OrdenDesembolso_V_1.1.1.2\Orden\obj\Debug\
 Orden
 none
 false
 DEBUG;TRACE
-D:\Versiones\OrdenDesembolso_V_1.1.1.1\Orden\App.xaml
+D:\Versiones\OrdenDesembolso_V_1.1.1.2\Orden\App.xaml
 42081290302
 
-61-413687026
-38-1566859990
+60-1381614087
+38-1930683472
 MainWindow.xaml;Views\Loading.xaml;Views\Order.xaml;Views\ProgressbarCopyFile.xaml;
 
-True
+False
 

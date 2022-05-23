@@ -189,6 +189,7 @@ namespace Orden.Views
                 if (common.ExistTicket(IdTicket).IdState == 1)
                 {
                     MessageBox.Show("El ticket ingresado no puede ser visualizado porque aun no ha sido atendido por ANALISIS", "Mensaje de Informativo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    common.DeleteLocked(txtCase.Text.Trim());
                     return;
                 }
                 ticketFind = ticket_ViewModel.Ticket(IdTicket, FindStates);
@@ -352,10 +353,10 @@ namespace Orden.Views
                         using (ModelOrder model = new ModelOrder())
                         {
                             NameUser = (from a in model.TicketsUsers
-                                           join b in model.Users on a.IdUser equals b.IdUser
-                                           where a.IdTicket == txtCase.Text.Trim()
-                                           select b.NameUser).FirstOrDefault();
-                        }      
+                                        join b in model.Users on a.IdUser equals b.IdUser
+                                        where a.IdTicket == txtCase.Text.Trim()
+                                        select b.NameUser).FirstOrDefault();
+                        }
                         MessageBox.Show("El ticket que trata de consultar se encuentra bloqueado en base de datos, puede estar siendo trabajado por otro usuario: " + NameUser + "", "Mensaje de Informativo", MessageBoxButton.OK, MessageBoxImage.Information);
                         return;
                     }
@@ -1042,6 +1043,16 @@ namespace Orden.Views
                 {
                     RuleMCYMiCasaYa();
                 }
+                if (cbFrechType.Text == "FRECH CP ECOBERTURA" && cbCpEco.Text == "NO")
+                {
+                    MessageBox.Show("La selección FRECH CP ECOBERTURA no esta permitida cuando el campo VIVIENDO ECOBERTURA es NO", "Mensaje de Informativo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    cbFrechType.Text = "FRECH CP";
+                }
+                if (cbFrechType.Text == "FRECH CP" && cbCpEco.Text == "SI")
+                {
+                    MessageBox.Show("La selección FRECH CP no esta permitida cuando el campo VIVIENDO ECOBERTURA es SI", "Mensaje de Informativo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    cbFrechType.Text = "FRECH CP ECOBERTURA";
+                }
             }
             catch (Exception exc)
             {
@@ -1124,9 +1135,9 @@ namespace Orden.Views
                 {
                     if (cbClassification.Text == "VIVDA" && (decimal.Parse(txtAppraisalValue.Text, System.Globalization.NumberStyles.Currency) <= validationFrech_ViewModel.Salary() * 500) && cbScheme.Text == "AVM (Vivienda > a VIS)" && cbVda.Text == "Nuevo" && (cbCoin.Text == "COP" || cbCoin.Text == "UVR") && txtModality.Text == "NO VIS" && cbPlan.Text == "Si - Normal Equivalente" && cbFrech.Text == "NO" && (cbFormat.Text == "SI" || cbFormat.Text == "NO") && cbPropertyType.Text == "URBANO" && (cbClass.Text == "APARTAMENTO" || cbClass.Text == "CASA"))
                     {
-                        txtFrechResult.Text = "FRECH CP";
-                        cbFrechType.Items.Add(txtFrechResult.Text);
-                        cbFrechType.Text = txtFrechResult.Text;
+                        txtFrechResult.Text = "FRECH CP - FRECH CP ECOBERTURA";
+                        cbFrechType.Items.Add("FRECH CP");
+                        cbFrechType.Items.Add("FRECH CP ECOBERTURA");
                         return;
                     }
                     if (cbScheme.Text == "AVV (Vivienda VIS)" && salary > 1 && salary <= validationFrech_ViewModel.Salary() * 8 && cbVda.Text == "Nuevo" && (txtModality.Text == "VIS" || txtModality.Text == "VIP") && cbPlan.Text == "Si - Normal Equivalente" && cbFrech.Text == "NO" && cbFonvivienda.Text == "NO" && (cbFormat.Text == "SI" || cbFormat.Text == "NO") && cbPropertyType.Text == "URBANO" && (cbClass.Text == "APARTAMENTO" || cbClass.Text == "CASA"))
@@ -1155,6 +1166,7 @@ namespace Orden.Views
                         txtFrechResult.Text = "NO APLICA";
                         cbFrechType.Items.Add(txtFrechResult.Text);
                         cbFrechType.Text = txtFrechResult.Text;
+                        cbCpEco.Text = "NO";
                     }
                 }
                 generalInformation_ViewModel.RuleFrech(gridGeneral, gridFrech);
@@ -1312,6 +1324,25 @@ namespace Orden.Views
                         cbTypeAutomatic.Text = "";
                     }
                 }
+            }
+        }
+        private void CbCpEco_DropDownClosed(object sender, EventArgs e)
+        {
+            if (txtFrechResult.Text == "FRECH CP - FRECH CP ECOBERTURA")
+            {
+                if (cbCpEco.Text == "NO")
+                {
+                    cbFrechType.Text = "FRECH CP";
+                }
+                else if (cbCpEco.Text == "SI")
+                {
+                    cbFrechType.Text = "FRECH CP ECOBERTURA" +
+                        "";
+                }
+            }
+            if (txtFrechResult.Text == "NO APLICA")
+            {
+                cbCpEco.Text = "NO";
             }
         }
 
@@ -1946,6 +1977,7 @@ namespace Orden.Views
         private void NewAccount_Click(object sender, RoutedEventArgs e) => IndexAccount = NewRegister(datagridAccount, gridAccount);
         private void NewCheck_Click(object sender, RoutedEventArgs e) => IndexCheck = NewRegister(datagridCheck, gridCheck);
         private void NewSubro_Click(object sender, RoutedEventArgs e) => IndexSubroga = NewRegister(datagridSubro, gridSubro);
+
         private void NewSeller_Click(object sender, RoutedEventArgs e) => IndexSeller = NewRegister(datagridSeller, gridSeller);
         private void NewContingency_Click(object sender, RoutedEventArgs e) => common.GenericCleaner(gridContingency, false);
         private void NewAutomatic_Click(object sender, RoutedEventArgs e) => IndexDebitAccount = NewRegister(datagridAutomatic, gridAutomatic);
