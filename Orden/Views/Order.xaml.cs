@@ -1144,21 +1144,19 @@ namespace Orden.Views
                     {
                         if (salary > 1 && salary <= validationFrech_ViewModel.Salary() * 8)
                         {
-                            txtFrechResult.Text = "FRECH II";
+                            txtFrechResult.Text = "NO APLICA";
                             cbFrechType.Items.Add(txtFrechResult.Text);
+                            cbFrechType.Text = txtFrechResult.Text;
                         }
                         if (salary > 1 && salary <= validationFrech_ViewModel.Salary() * 4)
                         {
-                            if (txtFrechResult.Text == "")
+                            if (txtFrechResult.Text == "" || cbFrechType.Text == "NO APLICA")
                             {
+                                cbFrechType.Items.Clear();
                                 txtFrechResult.Text = "FRECH V - MI CASA YA";
+                                cbFrechType.Items.Add("FRECH V - MI CASA YA");
                                 cbFrechType.Text = txtFrechResult.Text;
                             }
-                            else
-                            {
-                                txtFrechResult.Text = txtFrechResult.Text + " - " + "FRECH V - MI CASA YA";
-                            }
-                            cbFrechType.Items.Add("FRECH V - MI CASA YA");
                         }
                     }
                     else

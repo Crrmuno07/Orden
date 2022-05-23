@@ -159,7 +159,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QD+yNc0ziG1dexK5munwheCwCVDUIH6sN0dVEv+bgis=</dsig:DigestValue>
+        <dsig:DigestValue>q2RulQtnUS/u5aa1ghq2GQlwikHZX98gWpGdm1k6K2Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -268,13 +268,13 @@
       <dsig:DigestValue>ssvt5aj1XvEj7EYRbxppqXtTlhJE2YqqIAi7S+HG/2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Orden.exe.config" size="3567">
+  <file name="Orden.exe.config" size="3569">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kk0HF1ne9D/79cERPJvLzrY8HZnJpAw3XIrrB7gg3dQ=</dsig:DigestValue>
+      <dsig:DigestValue>IgSSvXses9Z4Lbs528sfPABnVFnFuWStkHfNhABcGLU=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
