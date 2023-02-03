@@ -97,6 +97,11 @@ namespace Orden
             {
                 if (cbOrders.Text != "")
                 {
+                    if (cbOrders.Text == "Orden Auxiliar de Análisis")
+                    {
+                        mainWindow.Assignment.Visibility = Visibility.Visible;
+                        mainWindow.PrintUser.Visibility = Visibility.Visible;
+                    }
                     if (cbOrders.Text == "Consulta Orden")
                     {
                         mainWindow.Print.Visibility = Visibility.Visible;

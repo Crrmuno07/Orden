@@ -18,7 +18,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\AppNew\</PublishUrl>
+    <PublishUrl>C:\AppNew\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -29,10 +29,10 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
     <UpdateUrl>\\SBMDEBPAPC01V\Instaladores_Aplicacion\App\AppNew\</UpdateUrl>
-    <MinimumRequiredVersion>1.1.1.2</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.2.0.0</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -181,6 +181,7 @@
     <Compile Include="Model\AuditProcess.cs" />
     <Compile Include="Model\AuditTicket.cs" />
     <Compile Include="Model\CausesStranding.cs" />
+    <Compile Include="Model\DistributeTicketsUsers.cs" />
     <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\OrderStates.cs" />
     <Compile Include="Model\OrderStatesGet.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="ViewModels\Seller_ViewModel.cs" />
     <Compile Include="ViewModels\Stranded_ViewModel.cs" />
     <Compile Include="ViewModels\Subrogation_ViewModel.cs" />
+    <Compile Include="ViewModels\TicketsAssignment_ViewModel.cs" />
     <Compile Include="ViewModels\Ticket_ViewModel.cs" />
     <Compile Include="ViewModels\ValidationFrech_ViewModel.cs" />
     <Compile Include="Views\Loading.xaml.cs">
@@ -215,6 +217,9 @@
     </Compile>
     <Compile Include="Views\ProgressbarCopyFile.xaml.cs">
       <DependentUpon>ProgressbarCopyFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TicketsAssignment.xaml.cs">
+      <DependentUpon>TicketsAssignment.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -240,6 +245,10 @@
     <Page Include="Views\ProgressbarCopyFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TicketsAssignment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

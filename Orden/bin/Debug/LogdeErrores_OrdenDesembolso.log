@@ -214,3 +214,8 @@ System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o 
    en Orden.App.OnStartup(StartupEventArgs e) en D:\Versiones\OrdenDesembolso_V_1.1.1.3\Orden\App.xaml.cs:línea 112
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:258,State:0,Class:20
+2022-06-14 14:55:56,301 FATAL [1] Orden.Views.Order.PrintUser_Click - URI no válido: no se puede determinar el formato del URI.
+System.UriFormatException: URI no válido: no se puede determinar el formato del URI.
+   en System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   en System.Uri..ctor(String uriString)
+   en Orden.Views.Order.PrintUser_Click(Object sender, RoutedEventArgs e) en C:\Fuentes\Version_1.1.1\OrdenDesembolso_V_1.1.1.3\Orden\Views\Order.xaml.cs:línea 899

@@ -15,7 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Wipro.Utils;
-
+using Microsoft.Win32;
 namespace Orden.Views
 {
     public partial class Order : Window
@@ -861,6 +861,50 @@ namespace Orden.Views
                     }
                     CaptureScreen(element, path);
                     common.ConvertPdf(filePath, true);
+                 }
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        /// Imprime la orden y la guarda en pdf, por pedido del usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PrintUser_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtCase.Text.Trim()))
+                {
+                    SaveFileDialog showdialog = new SaveFileDialog()
+                    {
+                        Title = "Guardar como",
+                        FileName = txtCase.Text.Trim(),
+                        Filter = "PDF | *.pdf",
+                        AddExtension = true
+                    };
+                    showdialog.ShowDialog();
+                    if (showdialog.FileName != "")
+                    {
+                        if (File.Exists(showdialog.FileName))
+                        {
+                            System.IO.File.Delete(showdialog.FileName);
+                        }
+                        UIElement element = scrollHome.Content as UIElement;
+                        string filePath = showdialog.FileName.Replace(".pdf", ".png");
+                        Uri path = new Uri(filePath); 
+                        if (File.Exists(filePath))
+                        {
+                            System.IO.File.Delete(filePath);
+                        }
+                        CaptureScreen(element, path);
+                        common.ConvertPdf(filePath, true);
+                        MessageBox.Show("Se ha generado correctamente la impresión de la pantalla","Confirmación");
+                    }
                 }
             }
             catch (Exception ex)
@@ -868,6 +912,30 @@ namespace Orden.Views
                 Log.Fatal(ex.Message, ex);
             }
         }
+
+        /// <summary>
+        ///  Ver la lista de casos asignados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Assignment_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                TicketsAssignment winTickets = new TicketsAssignment()
+                {
+                    Width = 800,
+                    Height = 550
+                };
+                winTickets.ShowDialog();
+                winTickets.Close();
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex.Message, ex);
+            }
+        }
+
         public void CaptureScreen(UIElement source, Uri destination)
         {
             try

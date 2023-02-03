@@ -73,6 +73,7 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -84,8 +85,10 @@
                     <ComboBox x:Name="cbCaseReversed" Margin="35 0 0 0" Style="{StaticResource cbStyle}" Grid.Row="1"  Grid.Column="3" materialDesign:HintAssist.Hint="CASO REVERSADO" Width="130" IsEditable="False" IsReadOnly="True"/>
                     <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left"  Margin="15 30 0 15" Name="CleanSheet" Click="CleanSheet_Click">Limpiar Planilla</Button>
                     <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Visibility="Collapsed" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Left"  Margin="20 30 0 15" Name="Calculate">Calcular TRC</Button>
-                    <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Grid.Column="6" HorizontalAlignment="Left"  Margin="30,30,0,15" Name="Save" Click="Save_Click" Grid.ColumnSpan="2">Guardar Cambios</Button>
-                    <Button Content="{materialDesign:PackIcon Camera}" ToolTip="Imprimir caso" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left"  Margin="15 30 0 15" Name="Print" Click="Print_Click" Visibility="Hidden"></Button>
+                    <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Grid.Column="6" HorizontalAlignment="Left"  Margin="20,30,0,15" Name="Save" Click="Save_Click" >Guardar Cambios</Button>
+                    <Button Content="{materialDesign:PackIcon Camera}" ToolTip="Imprimir caso" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left"  Margin="15 30 0 15" Name="Print" Click="Print_Click" Visibility="Collapsed"></Button>
+                    <Button Content="{materialDesign:PackIcon Camera}" ToolTip="Imprimir caso" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left"  Margin="15 30 0 15" Name="PrintUser" Click="PrintUser_Click" Visibility="Collapsed"></Button>
+                    <Button Content="{materialDesign:PackIcon clipboardlist}" ToolTip="Casos asignados" Grid.Row="1" Grid.Column="8" HorizontalAlignment="Left"  Margin="15 30 0 15" Name="Assignment" Click="Assignment_Click"  Visibility="Collapsed" ></Button>
                 </Grid>
                 <Grid Background="White" Margin="40 20 20 20" Name="gridParticipants" HorizontalAlignment="Center" Width="1265">
                     <Grid.ColumnDefinitions>

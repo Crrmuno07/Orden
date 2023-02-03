@@ -45,6 +45,7 @@ namespace Orden.Model
         public virtual DbSet<OrderStatesGet> OrderStatesGets { get; set; }
         public virtual DbSet<OrderUsers> OrderUsers { get; set; }
         public virtual DbSet<AuditTicket> AuditTickets { get; set; }
+        public virtual DbSet<DistributeTicketsUsers> DistributeTicketsUsers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Assistant>()

@@ -117,6 +117,11 @@ namespace Orden
                         if (splashMain.cbOrders.Items.Count == 1)
                         {
                             IdOrder = common.IdOrder();
+                            if (IdOrder == 1)
+                            {
+                                splashMain.mainWindow.Assignment.Visibility = Visibility.Visible;
+                                splashMain.mainWindow.PrintUser.Visibility = Visibility.Visible;
+                            }
                             if (IdOrder == 5)
                             {
                                 splashMain.mainWindow.Print.Visibility = Visibility.Visible;

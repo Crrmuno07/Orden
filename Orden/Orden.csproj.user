@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>D:\AppNew\|D:\App Prueba\|D:\AppCristian\|D:\App\|\\10.8.123.14\Instaladores_Aplicacion\Aplicacion\</PublishUrlHistory>
+    <PublishUrlHistory>C:\AppNew\|D:\AppNew\|D:\App Prueba\|D:\AppCristian\|D:\App\</PublishUrlHistory>
     <InstallUrlHistory>\\10.8.123.14\Instaladores_Aplicacion\Aplicacion\</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory>\\SBMDEBPAPC01V\Instaladores_Aplicacion\App\AppNew\|\\10.8.123.14\Instaladores_Aplicacion\Aplicacion\</UpdateUrlHistory>
